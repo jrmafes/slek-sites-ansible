@@ -1,8 +1,7 @@
 ---
-- name: Ping Linux hosts
-  hosts: all          # if you have a Linux group (e.g., linux_nodes), replace 'all' with that group name
-  gather_facts: false
+- name: Ping Linux hosts (raw)
+  hosts: all
+  gather_facts: no
   tasks:
-    - name: Ping
-      ansible.builtin.ping:
-
+    - name: SSH sanity check
+      ansible.builtin.raw: 'echo OK && uname -a'
