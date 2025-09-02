@@ -1,0 +1,8 @@
+---
+- name: Ping Linux hosts
+  hosts: all          # if you have a Linux group (e.g., linux_nodes), replace 'all' with that group name
+  gather_facts: false
+  tasks:
+    - name: Ping
+      ansible.builtin.ping:
+
